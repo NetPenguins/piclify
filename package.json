@@ -1,5 +1,5 @@
 {
-  "name": "kcadventures",
+  "name": "piclify",
   "private": true,
   "description": "Site for showing how to create an image gallery using Facebook GraphAPI and Gatsby",
   "version": "0.2.1",
@@ -53,9 +53,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/NetPenguins/piclify"
   },
   "bugs": {
-    "url": "https://github.com/NetPenguins/gatsby/issues"
+    "url": "https://github.com/NetPenguins/piclify/issues"
   }
 }
