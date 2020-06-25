@@ -21,8 +21,16 @@ const Footer = () => (
       <strong style={{color: "white"}}>KC Adventures by Chad Wilson.</strong>
       <div style={{color: 'white'}}>Source Code  -
         <a href="http://opensource.org/licenses/mit-license.php"> MIT License</a></div>.
+          <a className="button is-danger is-small footim" href="https://github.com/NetPenguins/piclify/issues/new/choose">
+            Report a Bug
+          </a>
+          <a className="button is-primary is-small footim" href="https://github.com/NetPenguins/piclify/issues/new/choose">
+            Suggestions
+          </a> 
+      <br></br>
       <div style={{color: 'white'}}>Example Images  -
         <a href="https://pixabay.com/service/license/"> Pixabay License</a></div>.
+
   </footer>
 )
 

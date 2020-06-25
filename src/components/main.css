@@ -94,6 +94,11 @@
 .section {
     flex: 1;
 }
+.footim{
+  margin: 5px;
+  height: auto;
+  display: inline-block;
+}
 /*MAIN ELEMENTS*/
   .MainContent {
     padding: 0;
@@ -154,6 +159,7 @@
     padding: 4.5vmax 11.1vw;
     border-radius: 20px;
     top: 50%;
+    margin-left: 10px;
     background-color:transparent;
     color: rgb(255, 255, 255);
     text-transform: uppercase;
