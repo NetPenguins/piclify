@@ -1,23 +1,65 @@
 import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import axios from "axios"
-import "./gallery.css"
-import "bulma/css/bulma.css"
+import $ from "jquery"
 import Lazyload from "react-lazyload";
+import ImGal from 'react-image-gallery';
+
+import "bulma/css/bulma.css"
+import "react-image-gallery/styles/css/image-gallery.css";
+import "./gallery.css"
 
 
-const ImageGallery = ({ images, loading, fetchImages }) => {
+/**
+ * @param {*} images  The images that are aquired from InfiniteImages
+ * @param {*} loading  Bool reflecting if image gathering is finished or not. 
+ * 
+ *  @summary Image Gallery is a React Component that is used to create an image grid 
+ *  by calling Facebook api GetImages which associates the objects 
+ *  to a corresponding component for a Carousel. When an image is selected that image is displayed
+ *  in the Carousel which allows the user to enter full screen or browse other images/videos. 
+ * 
+ */
+const ImageGallery = ({ images, loading}) => {
   // Create gallery here
   const [isActive, setisActive] = React.useState(false);
   const [currentPhoto, setCurrentPhoto] = React.useState(images);
-
+  
+  /**
+   * Used to toggle scroll lock on HTML element
+   **/
+  function toggle(){
+    $('html').toggleClass("is-clipped")
+  }
+  /**
+   * Array for holding img objects for passing to carousel.
+   */
+  var componentList = []
+  /** Used to create img items for Carousel */
+  function createItem(img){
+    componentList.push(
+    {
+      original: img["sourcejpg"],
+      thumbnail: img["sourcejpg"]
+    }
+    )
+  }
+  images.map(image => createItem(image))
   return (
     <> 
-    <div className="image-grid">
-      {!loading
-        ? images.map(image => (
-          //Map images to an image item inside the main grid. Create an event to togle activation of modal
-            <div className="image-item" key={image["id"]}> 
+     <div className={`modal ${isActive ? "is-active" : ""}`} id="Carousel-Modal">
+        <div className="modal-background"></div>
+          <div className="modal-content" id="Carousel-Modal-Content">
+            <ImGal items={componentList} showThumbnails={false} startIndex={componentList.findIndex(function(item, i){
+              return item.original === currentPhoto
+            })}/>
+        </div>
+        <button className="modal-close is-large" aria-label="close" onClick={() => {setisActive(!isActive); toggle();}}></button>
+      </div>
+     <div className="image-grid">
+      {!loading ? images.map(image => ( 
+          //Map images to an image item inside the main grid. Create an event to toggle activation of modal
+            <div className="image-item" key={image["id"]}>  
             {/*
               * LazyLoad Images to help increase loadtimes on heavier queries 
               * TODO: need to add place holder (preferably spinner of sorts)
@@ -25,9 +67,9 @@ const ImageGallery = ({ images, loading, fetchImages }) => {
             <Lazyload height={25} offset={10}>
               <a
                 onClick={() => {
-                  setisActive(!isActive); 
+                  setisActive(!isActive);
+                  toggle();
                 }}
-                className={`${isActive ? "is-active" : ""}`}
                 target="_blank"
                 rel="noreferrer noopener"
               >
@@ -37,6 +79,7 @@ const ImageGallery = ({ images, loading, fetchImages }) => {
                   * This determination will save client load times drastically if support for webp is found
                   * Display image in grid and set event listener
                   */}
+
                 <picture>
                   <source srcSet={image["sourcewebp"]} type="image/webp" onClick={() => {
                     setCurrentPhoto(image["sourcewebp"]);
@@ -48,17 +91,6 @@ const ImageGallery = ({ images, loading, fetchImages }) => {
                     setCurrentPhoto(image["sourcejpg"]);
                   }}/>
                 </picture>
-                
-                {/* Map the image to the modal to call the image that was clicked on */}
-                 <div className={`modal ${isActive ? "is-active" : ""}`}>
-                  <div className="modal-background"></div>
-                    <div className="modal-content">
-                      <p className="image">
-                        <img src={currentPhoto} alt={image["alt_text"]} />
-                      </p>
-                  </div>
-                  <button className="modal-close is-large" aria-label="close"></button>
-                </div>
               </a>
               </Lazyload>
             </div>
@@ -73,7 +105,11 @@ const ImageGallery = ({ images, loading, fetchImages }) => {
   )
 }
 
-const InfiniteImages = ({site}) => {
+/**
+ * 
+ * @param {*} site  The location name that the album is being retrieved for 
+ */
+const GetImages = ({site}) => {
   // Hold state
   const [images, setImages] = useState([])
   const [loading, setLoading] = useState(true)
@@ -90,6 +126,7 @@ const InfiniteImages = ({site}) => {
       setImages([ ...images, ...res.data.images.data.map(image => (
        {sourcewebp: image.webp_images[0].source, //webp url
         sourcejpg: image.images[0].source, //jpg url
+        index: images.length === 0 ? 0 : images.length-1,
         id: image.id, // id of image
         alt_text: image.alt_text})) //alt text
       ]) 
@@ -98,14 +135,13 @@ const InfiniteImages = ({site}) => {
   }
 
   return (
-    <ImageGallery images={images} loading={loading} fetchImages={fetchImages} />
+    <ImageGallery images={images} loading={loading} />
   )
 }
 
 ImageGallery.propTypes = {
   images: PropTypes.array,
   loading: PropTypes.bool,
-  fetchImages: PropTypes.func,
 }
 
-export default InfiniteImages
+export default GetImages

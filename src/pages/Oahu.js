@@ -2,14 +2,14 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import InfiniteImages from "../components/InfiniteImages"
+import GetImages from "../components/GetImages"
 
 const Oahu = () => {
   return (
     <Layout>
       <SEO title="Oahu" />
       <div className="Block__Divider--hidden"/>
-      <InfiniteImages site="oahu"/>
+      <GetImages site="oahu"/>
     </Layout>
   )
 }

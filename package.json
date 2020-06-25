@@ -24,6 +24,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
+    "react-image-gallery": "^1.0.7",
     "react-infinite-scroll-component": "^4.5.2",
     "react-lazyload": "^2.6.7",
     "react-netlify-identity": "^0.2.3",
@@ -43,8 +44,9 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "netlify-lambda serve src/lambda & gatsby develop", 
     "format": "prettier --write src/**/*.{js,jsx}",
+    "launch": "open http://localhost:8000",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
