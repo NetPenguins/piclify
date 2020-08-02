@@ -2,7 +2,7 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import "bulma/css/bulma.css"
-import "../components/main.css"
+import "../styles/main.css"
 const Footer = () => (
   <footer className="hero-foot is-dark">
       <div>

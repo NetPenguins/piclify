@@ -2,8 +2,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import "bulma/css/bulma.css"
-import "./main.css"
-import Header from "./header"
+import "../styles/main.css"
+import Navbar from "./Navbar"
 import Footer from "./footer"
 
 const Layout = ({ children }) => {
@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
   `)
     return (
       <main className="MainContent">
-        <Header/>
+        <Navbar/>
         <div
           className="MainContent"
         >

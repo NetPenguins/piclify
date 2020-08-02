@@ -8,7 +8,6 @@ const Oahu = () => {
   return (
     <Layout>
       <SEO title="Oahu" />
-      <div className="Block__Divider--hidden"/>
       <GetImages site="oahu"/>
     </Layout>
   )

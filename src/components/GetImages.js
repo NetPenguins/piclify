@@ -4,10 +4,10 @@ import axios from "axios"
 import $ from "jquery"
 import Lazyload from "react-lazyload";
 import ImGal from 'react-image-gallery';
-
+import im from "../images/gatsby-icon.png"
 import "bulma/css/bulma.css"
 import "react-image-gallery/styles/css/image-gallery.css";
-import "./gallery.css"
+import "../styles/gallery.css"
 
 
 /**
@@ -64,7 +64,7 @@ const ImageGallery = ({ images, loading}) => {
               * LazyLoad Images to help increase loadtimes on heavier queries 
               * TODO: need to add place holder (preferably spinner of sorts)
               */}
-            <Lazyload height={25} offset={10}>
+            <Lazyload height={25} offset={5}>
               <a
                 onClick={() => {
                   setisActive(!isActive);
@@ -129,9 +129,11 @@ const GetImages = ({site}) => {
         index: images.length === 0 ? 0 : images.length-1,
         id: image.id, // id of image
         alt_text: image.alt_text})) //alt text
-      ]) 
+      ])
       setLoading(false)
-    })
+    }).catch((e) => {
+      console.log(`Error caught in GetImages ${e}`)
+    }) 
   }
 
   return (

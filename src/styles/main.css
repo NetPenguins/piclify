@@ -1,16 +1,11 @@
 /*NAVIGATION*/
-.navbar {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  width: 100%;
-  flex-direction: row;
+/* .navbar {
   background: linear-gradient(90deg, #000000 -3.07%, #3d3d3d 100%);
   box-shadow: 3px 3px 8px rgba(38, 38, 38, 0.25);
   color: rgb(32, 32, 32);
-}
+} */
 
-
+/* 
 @media only screen and (max-width: 1023px){
   .navbar{
     display: flex;
@@ -30,7 +25,6 @@
   }
   .navbar-menu, .navbar-item {
     background: linear-gradient(90deg, #000000 -3.07%, #3d3d3d 100%);
-    /* box-shadow: 3px 3px 8px rgba(38, 38, 38, 0.25); */
     color: rgb(32, 32, 32);
   }	
 }
@@ -63,7 +57,7 @@
   position: center;
   background-color: transparent;
 }
-/* HEADER */
+
 .fixedHeaderContainer {
     position: fixed;
     z-index: 9999;
@@ -77,11 +71,14 @@
     width: 100%;
     background-image: url(../images/icon.png);
     background-repeat: no-repeat;
-    /* background-size: 100px;  */
     background-position: 50% 50%;
     outline: 0;
-  }
+  } */
   /* FOOTER */
+
+  html{
+    overflow:auto;
+  }
 .main {
     display: flex;
     min-height: 100vh;
@@ -101,13 +98,16 @@
 }
 /*MAIN ELEMENTS*/
   .MainContent {
-    padding: 0;
     min-height: 75vmax;
     width: auto;
     overflow-x: hidden;
     background: linear-gradient(90deg, #000000 -3.07%, #3d3d3d 100%);
     color: rgb(32, 32, 32);
     padding-bottom: 5vh;
+  }
+
+  .divider{
+    height: 3.5rem;
   }
 
   /**
@@ -120,7 +120,7 @@
  * 
  * Main Elements brought in from Facebook Open Source 
  */
- .stripe {
+ /* .stripe {
     margin-top: calc(-2vw - 10px);
     margin-bottom: calc(-2vw - 10px);
   
@@ -152,9 +152,7 @@
   }
   .Block__LinkButton {
     display: flex;
-    /* flex-flow: row; */ 
     flex-grow: 1;
-    /* justify-items: center; */
     justify-content: space-around;
     padding: 4.5vmax 11.1vw;
     border-radius: 20px;
@@ -241,4 +239,4 @@
     display: contents;
   }
 
-  
+   */
