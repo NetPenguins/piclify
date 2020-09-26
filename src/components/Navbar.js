@@ -2,10 +2,9 @@ import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import NavbarLinks from "./NavbarLinks"
 import UserMenu from "./UserMenu"
-import $ from "jquery"
 
 const Navigation = styled.nav`
-  height: 3.5rem;
+  height: 4.5rem;
   width: 100%;
   display: flex;
   flex-grow: row;
@@ -56,7 +55,7 @@ const Navbox = styled.div`
     background: linear-gradient(90deg, #3f3f3f -3.07%, #212a3b 100%);
     color: rgb(32, 32, 32);
     transition: all 0.3s ease-in;
-    top: 3.5rem;
+    top: 4.5rem;
     right: ${props => (props.open ? "-100%" : "0")};
   }
 `
@@ -103,15 +102,13 @@ const LogoWrap = styled.div`
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false)
-  if (typeof window !== 'undefined'){
-    navbarOpen ? $('html').addClass('scroll-lock') : $('html').removeClass('scroll-lock')
-  }
+
   return (
     <Navigation>
       <UserMenu/>
       <Toggle
-        navbarOpen={navbarOpen}
-        onClick={() =>  setNavbarOpen(!navbarOpen)}
+        navbarOpen={ navbarOpen }
+        onClick={ () =>  setNavbarOpen(!navbarOpen) }
       >
         {navbarOpen ? <Hamburger open /> : <Hamburger />}
       </Toggle>

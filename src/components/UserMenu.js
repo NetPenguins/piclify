@@ -32,11 +32,10 @@ const LogoWrap = styled.div`
   flex: 0 1 36px;
 
   @media (max-width: 768px) and (orientation: landscape) {
-    flex: 0 1 25px;
+    flex: 0 1 10px;
   }
   & > a img.is-rounded{
-    width: 3rem;
-    padding-top: .25rem;
+    width: 4.75rem;
     transition: all 200ms ease-in;
     position: relative;
   }
