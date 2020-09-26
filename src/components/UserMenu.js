@@ -55,7 +55,7 @@ const UserMenu = () => {
           onClick={() => {
               setNavbarOpen(!navbarOpen)
           }}>
-          <Link class="image is-nav-image" to="#">
+          <Link class="image is-nav-image" to="/">
               <img class="is-rounded" src={imgURL || tempIcon}/>
           </Link>
         </LogoWrap>
