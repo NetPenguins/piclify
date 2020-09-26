@@ -2,6 +2,8 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { makeStyles } from '@material-ui/core/styles';
+import { Link } from "gatsby"
+
 import "../styles/main.css"
 
 const useStyles = makeStyles((theme) => ({
@@ -39,9 +41,9 @@ const IndexPage = () => {
             <div className="ActionBlock__Title">
               Oahu
             </div>
-              <a href="/Oahu/" className="ActionBlock__Link">
+              <Link to="/Oahu/" className="ActionBlock__Link">
                 Gallery
-              </a>
+              </Link>
           </div>
         </div>
         <div className="stripe bg-teal">
@@ -49,9 +51,9 @@ const IndexPage = () => {
             <div className="ActionBlock__Title">
               St. Lucia
             </div>
-              <a href="/StLucia/" className="ActionBlock__Link">
+              <Link to="/StLucia/" className="ActionBlock__Link">
                 Gallery
-              </a>
+              </Link>
           </div>
         </div>
     </div>
