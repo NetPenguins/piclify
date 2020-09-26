@@ -5,12 +5,14 @@
   "version": "0.2.1",
   "author": "Chad Wilson <cmwilson919@gmail.com>",
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
     "@reach/dialog": "^0.10.0",
     "@reach/tabs": "^0.10.0",
     "@reach/visually-hidden": "^0.10.0",
     "axios": "^0.19.0",
     "buefy": "^0.8.15",
     "bulma": "^0.7.5",
+    "firebase": "^7.17.1",
     "gatsby": "^2.13.31",
     "gatsby-image": "^2.2.6",
     "gatsby-plugin-manifest": "^2.3.3",
@@ -22,6 +24,7 @@
     "jquery": "^3.4.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
+    "react-bulma-components": "^3.4.0",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "react-image-gallery": "^1.0.7",
@@ -29,6 +32,7 @@
     "react-lazyload": "^2.6.7",
     "react-netlify-identity": "^0.2.3",
     "react-netlify-identity-widget": "^0.2.7",
+    "styled-components": "^5.1.1",
     "vue": "^2.6.11"
   },
   "devDependencies": {
@@ -44,7 +48,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "netlify-lambda serve src/lambda & gatsby develop", 
+    "develop": "GATSBY_ENV=development & netlify-lambda serve src/lambda & gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "launch": "open http://localhost:8000",
     "start": "npm run develop",

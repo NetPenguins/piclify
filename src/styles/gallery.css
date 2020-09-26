@@ -1,0 +1,132 @@
+
+.bg{
+  margin: 0 auto;
+  height: 100%;
+  padding: 0px 1.0875rem 1.45rem;
+  background: linear-gradient(90deg, #000000 -3.07%, #3d3d3d 100%);
+  box-shadow: 3px 3px 8px rgba(38, 38, 38, 0.25);
+  color: rgb(32, 32, 32);
+}
+.foot {
+  position: fixed;
+  bottom: 0;
+  max-height: 50%;
+  width: 100%;
+  background-color: rgb(31, 31, 31);
+  color: rgb(34, 34, 34);
+  text-align: center;
+}
+
+.image-grid {
+  line-height: 0;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 1%;
+  gap: .5rem .5rem; 
+  -webkit-column-count: 5;
+  -moz-column-count:    5;
+  column-count:         5;
+}
+
+.image-grid img {
+  margin-top: .5rem;
+  border-radius: .5rem;
+  width: 100% !important;
+  height: auto !important;
+}
+@media (max-width: 1200px) {
+  .image-grid {
+  -moz-column-count:    4;
+  -webkit-column-count: 4;
+  column-count:         4;
+  }
+}
+@media (max-width: 1000px) {
+  .image-grid{
+  -moz-column-count:    3;
+  -webkit-column-count: 3;
+  column-count:         3;
+  }
+}
+@media (max-width: 800px) {
+  .image-grid {
+  -moz-column-count:    2;
+  -webkit-column-count: 2;
+  column-count:         2;
+  }
+}
+@media (max-width: 400px) {
+  .image-grid {
+  -moz-column-count:    1;
+  -webkit-column-count: 1;
+  column-count:         1;
+  }
+}
+
+.giphy-embed{
+  display: block;
+  align-content: center;
+}
+
+#Carousel-Modal-Content{
+  width: 95%;
+  max-height: 85%;
+  min-width: 85%;
+}
+#Carousel-Modal{
+  background-color: rgba(54, 54, 54, 0.801);
+}
+#Carousel-Modal button.modal-close{
+  /* transform: translateY(50px); */
+  z-index: 9999;
+}
+
+.no-scroll{
+  position: fixed;
+  overflow-y: hidden;
+}
+
+.preloader {
+  align-items: center;
+  display: flex;
+  height: auto;
+  justify-content: center;
+  left: 0;
+  position: relative;
+  transition: opacity 0.3s linear;
+  width: 100%;
+  z-index: 9999;
+}
+
+/* 403 message graphic. This will happen if the amount of requests per time frame is met */
+.error-container{
+  margin: 0;
+  width: 75vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  
+}
+.error-info{
+  width: 80vw;
+  position: relative;
+  padding-top: 5vh;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.error-text{
+  text-align: center;
+  color: white;
+  font-size: 4vw;
+  text-emphasis: bold;
+  margin: 0 auto;
+}
+.error-code{
+  color: rgba(255, 255, 255, 0.445);
+  font-size: 2vw;
+  text-emphasis: bold;
+}
