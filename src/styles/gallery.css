@@ -98,35 +98,4 @@
   z-index: 9999;
 }
 
-/* 403 message graphic. This will happen if the amount of requests per time frame is met */
-.error-container{
-  margin: 0;
-  width: 75vw;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  
-}
-.error-info{
-  width: 80vw;
-  position: relative;
-  padding-top: 5vh;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-.error-text{
-  text-align: center;
-  color: white;
-  font-size: 4vw;
-  text-emphasis: bold;
-  margin: 0 auto;
-}
-.error-code{
-  color: rgba(255, 255, 255, 0.445);
-  font-size: 2vw;
-  text-emphasis: bold;
-}
+/* // */
