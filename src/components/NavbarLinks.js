@@ -40,9 +40,21 @@ const NavItem = styled(Link)`
 const NavbarLinks = () => {
   return (
     <>
-      <NavItem to="/">Home</NavItem>
-      <NavItem to="/Oahu/">Oahu</NavItem>
-      <NavItem to="/StLucia/">St. Lucia</NavItem>
+      <NavItem to="/" activeStyle={{
+        color: 'crimson'
+      }}>
+        Home
+      </NavItem>
+      <NavItem to="/Oahu" activeStyle={{
+        color: 'crimson'
+      }}>
+        Oahu
+      </NavItem>
+      <NavItem to="/StLucia" activeStyle={{
+        color: 'crimson'
+      }}>
+        St. Lucia
+      </NavItem>
     </>
   )
 }

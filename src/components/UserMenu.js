@@ -43,7 +43,6 @@ const LogoWrap = styled.div`
 
 const UserMenu = () => {
   const [navbarOpen, setNavbarOpen] = useState(false)
-  
   const [imgURL, setImg] = React.useState()
 
   return (

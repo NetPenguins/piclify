@@ -13,19 +13,18 @@ const useStyles = makeStyles({
       textEmphasis: "bold",
     },
     errorContainer: {
-      margin: "0",
-      width: "75vw",
+      margin: "auto 0",
+      width: "50vw",
       position: "absolute",
       top: "50%",
       left: "50%",
       transform: "translate(-50%, -50%)",
-      
     },
     errorInfo: {
         width: "80vw",
-        position: "relative",
-        paddingTop: "5vh",
-        top: "50%",
+        position: "absolute",
+        paddingTop: "5rem",
+        bottom: "100",
         left: "50%",
         transform: "translate(-50%, -50%)"
     },
@@ -35,6 +34,11 @@ const useStyles = makeStyles({
         fontSize: "4vw",
         textEmphasis: "bold",
         margin: "0 auto"
+    },
+    '@media (min-width: 1600px)': {
+      errorContainer: {
+        paddingTop: "15rem"
+      }
     }
   });
 
