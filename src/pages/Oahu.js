@@ -1,15 +1,10 @@
 import React from "react"
+import GalleryPage from "../components/GalleryPage"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import GetImages from "../components/GetImages"
 
 const Oahu = () => {
   return (
-    <Layout>
-      <SEO title="Oahu" />
-      <GetImages site="oahu"/>
-    </Layout>
+    <GalleryPage title="Oahu" site="oahu"/>
   )
 }
 

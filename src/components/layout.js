@@ -1,12 +1,10 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-//import "bulma/css/bulma.css"
 import "../styles/main.css"
 import Navbar from "./Navbar"
 import Footer from "./footer"
 import styled from "styled-components"
-
+import { useStaticQuery, graphql } from "gatsby"
 
 const MainContent = styled.div`
     min-height: 75vmax;
@@ -20,7 +18,19 @@ const Section = styled.div`
     flex: 1;
 `
 
+
+
 const Layout = ({ children }) => {
+  const data = useStaticQuery(graphql`
+    query SiteTitleQuery {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `)
+
     return (
       <MainContent>
         <Navbar/>
