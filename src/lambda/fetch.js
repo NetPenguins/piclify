@@ -12,6 +12,7 @@ import config from "../../config";
 exports.handler = function(event, context, callback) {
   const apiRoot ="https://graph.facebook.com/v7.0";
   const accessKey = process.env.GATSBY_FB_ACCESSKEY || config.FB_ACCESSKEY
+  //googleapi query https://photoslibrary.googleapis.com/v1/mediaItems:search?albumId=AFmghBraDsGmqdUNoRx4ixU_8OlDcfWQoocltZoFjLX3Q-FZTQ0XHOANPIJaWsRmbJUYJv_DJkEq 
   var album = event.queryStringParameters.album;
   const stlucia = '10158093496777488'
   const oahu = '10158093482412488'

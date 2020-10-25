@@ -18,6 +18,7 @@
 }
 
 .image-grid {
+  height: 100%;
   line-height: 0;
   padding-left: 5%;
   padding-right: 5%;
@@ -28,12 +29,12 @@
   column-count:         5;
 }
 
-.image-grid img {
+/* .image-grid img {
   margin-top: .5rem;
   border-radius: .5rem;
   width: 100% !important;
   height: auto !important;
-}
+} */
 @media (max-width: 1200px) {
   .image-grid {
   -moz-column-count:    4;

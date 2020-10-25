@@ -1,4 +1,10 @@
 let proxy = require("http-proxy-middleware")
+const activeEnv =
+  process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development"
+console.log(`Using environment config: '${activeEnv}'`)
+require("dotenv").config({
+  path: `.env.${activeEnv}`,
+})
 module.exports = {
   siteMetadata: {
     title: `Piclify`,
@@ -25,6 +31,12 @@ module.exports = {
         path: `${__dirname}/src/images`,
         name: `images`,
       },
+    },
+    {
+      resolve: "gatsby-source-google-photos",
+      options: {
+        albumsTitles: ["Oahu", "Things"],
+    },
     },
     {
       resolve: `gatsby-plugin-manifest`,

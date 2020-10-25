@@ -4,7 +4,7 @@ import GalleryPage from "../components/GalleryPage"
 
 const Oahu = () => {
   return (
-    <GalleryPage title="Oahu" site="oahu"/>
+    <GalleryPage title="Oahu" site="Oahu"/>
   )
 }
 
